@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Threshold MVP Deliverables</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      pre {
+        background: #f6f8fa;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        padding: 12px;
+        overflow-x: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-top: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Threshold MVP Deliverables</h1>
+    <p>
+      Current live URL:
+      <a href="https://ubuntu-conversation-app.vercel.app" target="_blank"
+        >https://ubuntu-conversation-app.vercel.app</a
+      >
+    </p>
+    <p>
+      Note: This is currently a demo-only frontend with no backend, so live
+      matching and live room creation are not functional yet.
+    </p>
+
+    <h2>1) Product Summary</h2>
+    <p>
+      Threshold is a guided conversation app for people who want one meaningful
+      exchange without swiping, scrolling, or performance pressure.
+    </p>
+
+    <h2>2) User Problem</h2>
+    <p>
+      Users are socially fatigued and want a fast, safe path to one real
+      conversation or one meaningful solo reflection.
+    </p>
+
+    <h2>3) User Types</h2>
+    <ul>
+      <li>Lonely user seeking connection</li>
+      <li>Socially burnt-out user</li>
+      <li>Dating-app-fatigued user</li>
+      <li>Transitioning user seeking grounded conversation</li>
+    </ul>
+
+    <h2>4) MVP Loop</h2>
+    <p>
+      Check in → choose conversation type → choose mode (solo/live) → get
+      opening → converse/reflect → save reflection → revisit archive.
+    </p>
+
+    <h2>5) MVP Scope (Must-Have)</h2>
+    <ul>
+      <li>Auth (email magic link or OAuth)</li>
+      <li>Check-in state capture</li>
+      <li>Conversation type selection</li>
+      <li>Solo flow</li>
+      <li>Live text flow (with fallback to solo)</li>
+      <li>Reflection save</li>
+      <li>Archive + repeat-use home</li>
+    </ul>
+
+    <h2>6) Not MVP-Center</h2>
+    <ul>
+      <li>Full ecosystem/IRL layers</li>
+      <li>Heavy symbolic worldbuilding UI</li>
+      <li>Full audio/video complexity</li>
+      <li>Multi-room complexity outside core loop</li>
+    </ul>
+
+    <h2>User Flow Map</h2>
+    <p>
+      <strong>Path A (Solo):</strong> Home → Check In → Conversation Type →
+      Mode: Solo → Opening Prompt → Solo Reflection Room → Save Reflection →
+      Archive
+    </p>
+    <p>
+      <strong>Path B (Live text):</strong> Home → Check In → Conversation Type
+      → Mode: Live → Opening → Match/Waiting → Shared Text Room → Save
+      Reflection → Archive
+    </p>
+    <p>
+      <strong>Path C (No match fallback):</strong> Home → Check In →
+      Conversation Type → Mode: Live → Opening → No Match → [Start Solo Now] or
+      [Try Again]
+    </p>
+
+    <h2>Wireframe Mockups (Low-Fidelity)</h2>
+
+    <h3>1. Home</h3>
+    <pre>+--------------------------------------------------+
+| THRESHOLD                                        |
+| One meaningful conversation.                     |
+|                                                  |
+| [ Start ]                                        |
+| [ View Archive ]                                 |
+|                                                  |
+| Why Threshold | Safety | Account                 |
++--------------------------------------------------+</pre>
+
+    <h3>2. Check In</h3>
+    <pre>+--------------------------------------------------+
+| Check In                                         |
+| How are you arriving today?                      |
+|                                                  |
+| [ Calm ] [ Heavy ] [ Curious ] [ Numb ]          |
+| [ Lonely ] [ Energized ]                         |
+|                                                  |
+| [ Continue ]           [ Back ]                  |
++--------------------------------------------------+</pre>
+
+    <h3>3. Conversation Type</h3>
+    <pre>+--------------------------------------------------+
+| Choose Conversation Type                         |
+|                                                  |
+| ( ) Emotional support                            |
+| ( ) Deep life reflection                         |
+| ( ) Creative/intellectual                        |
+| ( ) Faith/spiritual                              |
+|                                                  |
+| [ Continue ]           [ Back ]                  |
++--------------------------------------------------+</pre>
+
+    <h3>4. Mode Selection</h3>
+    <pre>+--------------------------------------------------+
+| Choose Mode                                      |
+|                                                  |
+| [ Solo ]     Guided self-reflection              |
+| [ Live ]     Real-time human conversation        |
+|                                                  |
+| [ Continue ]           [ Back ]                  |
++--------------------------------------------------+</pre>
+
+    <h3>5. Opening</h3>
+    <pre>+--------------------------------------------------+
+| Your Opening                                     |
+| "What is something true you haven't said lately?"|
+|                                                  |
+| [ Start Conversation ]                           |
+| [ Try Different Opening ]                        |
+|                                                  |
+| Mode: Live/Text | Type: Emotional support        |
++--------------------------------------------------+</pre>
+
+    <h3>6. Live Waiting / Fallback</h3>
+    <pre>+--------------------------------------------------+
+| Finding a Match...                               |
+|                                                  |
+| Searching for someone in your chosen mode        |
+|                                                  |
+| [ Keep Waiting ]                                 |
+| [ Switch to Solo Now ]                           |
+| [ Try Again ]                                    |
++--------------------------------------------------+</pre>
+
+    <h3>7. Live Text Room</h3>
+    <pre>+--------------------------------------------------+
+| Live Room #A91                                   |
+| Timer: 12:44                                     |
+|--------------------------------------------------|
+| You: ...                                         |
+| Other: ...                                       |
+|--------------------------------------------------|
+| [Type message.................................]  |
+| [Send]   [End Session]                           |
+| Safety: [Report] [Block] [Exit]                  |
++--------------------------------------------------+</pre>
+
+    <h3>8. Solo Reflection Room</h3>
+    <pre>+--------------------------------------------------+
+| Solo Reflection                                  |
+| Prompt: "What are you avoiding naming?"          |
+|                                                  |
+| [ Reflection text area........................ ] |
+| [ .............................................] |
+|                                                  |
+| [ Save Reflection ]      [ New Prompt ]          |
++--------------------------------------------------+</pre>
+
+    <h3>9. Reflection Save</h3>
+    <pre>+--------------------------------------------------+
+| Save Reflection                                  |
+| Title: [ Today I admitted... ]                   |
+| Tags: [anxiety] [clarity] [+]                    |
+| Privacy: (x) Private  ( ) Share later            |
+|                                                  |
+| [ Save ]                 [ Discard ]             |
++--------------------------------------------------+</pre>
+
+    <h3>10. Archive</h3>
+    <pre>+--------------------------------------------------+
+| Archive                                          |
+|--------------------------------------------------|
+| May 10 - "I felt seen"      [Open]              |
+| May 08 - "Hard conversation" [Open]              |
+| May 05 - "Solo clarity"      [Open]              |
+|--------------------------------------------------|
+| [ Start New Conversation ]                       |
++--------------------------------------------------+</pre>
+
+    <h2>Sanctum (Mixed, Spaces-Inspired, Differentiated)</h2>
+    <h3>Sanctum Concept</h3>
+    <ul>
+      <li>Live audio stage (core)</li>
+      <li>Parallel text thread (for quieter participation)</li>
+      <li>Guided prompts injected by Threshold</li>
+      <li>Reflection capture at session end</li>
+    </ul>
+
+    <h3>Sanctum Roles</h3>
+    <ul>
+      <li>Host (opens Sanctum, controls flow)</li>
+      <li>Speaker (on stage audio)</li>
+      <li>Participant (listen + text)</li>
+      <li>Moderator (safety enforcement)</li>
+    </ul>
+
+    <h3>Sanctum Flow</h3>
+    <p>
+      Discover Sanctum → Join as listener → Request mic OR contribute in text
+      → Guided prompt moments → Session close → Reflection + save
+    </p>
+
+    <h3>Differentiation from Spaces</h3>
+    <ul>
+      <li>Reflection-first closeout (mandatory post-session prompt)</li>
+      <li>Emotional check-in gate before joining</li>
+      <li>Prompt-guided pacing (not freeform chaos)</li>
+      <li>Solo fallback continuation if user leaves early</li>
+    </ul>
+
+    <h2>Product Logic Directives</h2>
+    <ul>
+      <li>If user selects Live and match exists → live room</li>
+      <li>
+        If user selects Live and no match after timeout → solo fallback options
+      </li>
+      <li>If session ends → reflection save screen</li>
+      <li>If reflection saved → archive entry created</li>
+      <li>
+        If returning user exists → home shows “Start New Conversation” + recent
+        archive
+      </li>
+      <li>
+        Sanctum join requires active account + safety eligibility checks
+      </li>
+      <li>
+        Sanctum can degrade from audio to text-only if bandwidth fails
+      </li>
+    </ul>
+
+    <h2>Backend Requirements</h2>
+    <h3>Core Services</h3>
+    <ul>
+      <li>Auth service (session + identity)</li>
+      <li>Profile/state service (arrival state, preferences)</li>
+      <li>Matching service (live text pairing)</li>
+      <li>Realtime service (WebSocket for rooms + Sanctum)</li>
+      <li>Session service (conversation lifecycle)</li>
+      <li>Reflection/archive service</li>
+      <li>Moderation/safety service</li>
+      <li>Notification service</li>
+      <li>Analytics/event pipeline</li>
+    </ul>
+
+    <h3>Data Model (Minimum Entities)</h3>
+    <ul>
+      <li>User</li>
+      <li>UserSession</li>
+      <li>CheckIn</li>
+      <li>ConversationPreference</li>
+      <li>MatchQueue</li>
+      <li>ConversationSession</li>
+      <li>Room</li>
+      <li>Message</li>
+      <li>Reflection</li>
+      <li>ArchiveItem</li>
+      <li>SanctumRoom</li>
+      <li>SanctumParticipant</li>
+      <li>ModerationReport</li>
+      <li>BlockList</li>
+      <li>AuditEvent</li>
+    </ul>
+
+    <h3>Realtime Requirements</h3>
+    <ul>
+      <li>Presence (online/in-room)</li>
+      <li>Matchmaking queue updates</li>
+      <li>Typing/message events</li>
+      <li>Session timer/state sync</li>
+      <li>Sanctum stage state (host/speaker/listener)</li>
+      <li>Text chat stream for Sanctum</li>
+    </ul>
+
+    <h3>Safety/Moderation Requirements</h3>
+    <ul>
+      <li>Report/block in-session</li>
+      <li>Host/moderator remove/mute controls (Sanctum)</li>
+      <li>Rate limits + abuse detection</li>
+      <li>Content/event logging for moderation review</li>
+      <li>Emergency session termination paths</li>
+    </ul>
+
+    <h3>API Surface (High-Level)</h3>
+    <ul>
+      <li><code>POST /auth/*</code></li>
+      <li><code>POST /checkins</code></li>
+      <li><code>POST /match/enqueue</code></li>
+      <li><code>POST /match/dequeue</code></li>
+      <li><code>POST /sessions</code></li>
+      <li><code>POST /sessions/{id}/end</code></li>
+      <li><code>POST /messages</code></li>
+      <li><code>POST /reflections</code></li>
+      <li><code>GET /archive</code></li>
+      <li><code>POST /sanctum</code></li>
+      <li><code>POST /sanctum/{id}/join</code></li>
+      <li><code>POST /sanctum/{id}/request-mic</code></li>
+      <li><code>POST /moderation/report</code></li>
+    </ul>
+
+    <h2>Technical Architecture Assumptions</h2>
+    <ul>
+      <li>Frontend: Next.js (existing demo can evolve)</li>
+      <li>Backend: Node/TypeScript service layer (REST + WebSocket)</li>
+      <li>DB: Postgres</li>
+      <li>Cache/queue: Redis (match queue + presence)</li>
+      <li>
+        Realtime: WebSocket gateway (or managed realtime provider)
+      </li>
+      <li>Media (Sanctum audio): WebRTC SFU provider (managed first)</li>
+      <li>Storage: object storage for artifacts if needed</li>
+      <li>Observability: logs + metrics + error tracking</li>
+    </ul>
+
+    <h2>Phased Roadmap</h2>
+    <h3>Now (Phase 1)</h3>
+    <ul>
+      <li>Solidify product definition + wireframes</li>
+      <li>Build backend foundation (auth, sessions, reflections, archive)</li>
+      <li>Ship solo flow end-to-end</li>
+      <li>Ship live text prototype with fallback</li>
+    </ul>
+
+    <h3>Next (Phase 2)</h3>
+    <ul>
+      <li>Improve matching quality + repeat-use home</li>
+      <li>Safety tooling expansion</li>
+      <li>Sanctum alpha (mixed audio+text, host-led)</li>
+    </ul>
+
+    <h3>Later (Phase 3+)</h3>
+    <ul>
+      <li>Sanctum maturity (moderation depth, quality controls)</li>
+      <li>Advanced rooms/chambers/portals</li>
+      <li>Deeper audio/video support</li>
+      <li>IRL ecosystem integrations</li>
+    </ul>
+
+    <h2>Open Questions</h2>
+    <ol>
+      <li>Match timeout threshold before fallback (30s/60s/90s)?</li>
+      <li>
+        Anonymous by default, or lightweight profiles visible in live mode?
+      </li>
+      <li>Sanctum discoverability: public directory, invite-only, or both?</li>
+      <li>Reflection privacy defaults and export/delete requirements?</li>
+      <li>Moderation policy: automated actions vs human review SLA?</li>
+    </ol>
+  </body>
+</html>
